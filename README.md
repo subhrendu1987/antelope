@@ -5,7 +5,8 @@
 * Configure yum repository
   * Modify `/etc/yum.repos.d/CentOS-Linux-AppStream.repo` `baseurl=http://vault.centos.org/$contentdir/$releasever/AppStream/$basearch/os/`
   * `sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*`
-  * `sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*` 
+  * `sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*`
+  * [Ref](https://www.linuxcnf.com/2022/07/how-to-resolve-yum-repo-mirror-list.html)
 * Instruction to download custom kernel `https://wiki.centos.org/MarcusFurlong(2f)Custom_Kernel_draft.html` to fix the dependencies
 * Inside `~/rpmbuild/SPEC` download kernel.spec file from `https://git.centos.org/rpms/kernel/blob/cb9fcbaee7eed97ebe55d71dd693715741dfefb2/f/SPECS/kernel.spec`
 * `sudo dnf builddep kernel.spec` Resolve building dependencies.
