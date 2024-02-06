@@ -1,3 +1,12 @@
+# OS Configuration
+## CentOS 8.4.2105 VirtualBox Image (Using Virtual Box)
+### Image name 
+* [Download](https://www.linuxvmimages.com/images/virtualbox/)
+* Configure yum repository
+* * Modify `/etc/yum.repos.d/CentOS-Linux-AppStream.repo` `baseurl=http://vault.centos.org/$contentdir/$releasever/AppStream/$basearch/os/`
+  * 
+
+
 Antelope: a system which can adaptively choose the most suitable congestion control mechanism for a certain flow. 
 
 The antelope system is divided into two parts, one is the kernel module and the other is the user_space module.
