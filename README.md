@@ -1,7 +1,7 @@
 # OS Configuration
 ## CentOS 8.4.2105 VirtualBox Image (Using Virtual Box)
-### Image name 
-* [Download](https://www.linuxvmimages.com/images/virtualbox/)
+* [Download Prebuilt VM ](https://www.linuxvmimages.com/images/virtualbox/)
+* Use Image name: `CentOS 8.4.2105`, Custom Kernel Version: `4.18.0-348.7.1.el8.x86_64`
 * Configure yum repository
 * * Modify `/etc/yum.repos.d/CentOS-Linux-AppStream.repo` `baseurl=http://vault.centos.org/$contentdir/$releasever/AppStream/$basearch/os/`
   * Instruction to download custom kernel `https://wiki.centos.org/MarcusFurlong(2f)Custom_Kernel_draft.html` to fix the dependencies
