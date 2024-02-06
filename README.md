@@ -3,18 +3,20 @@
 * [Download Prebuilt VM ](https://www.linuxvmimages.com/images/virtualbox/)
 * Use Image name: `CentOS 8.4.2105`, Custom Kernel Version: `4.18.0-348.7.1.el8.x86_64`
 * Configure yum repository
-* * Modify `/etc/yum.repos.d/CentOS-Linux-AppStream.repo` `baseurl=http://vault.centos.org/$contentdir/$releasever/AppStream/$basearch/os/`
-  * Instruction to download custom kernel `https://wiki.centos.org/MarcusFurlong(2f)Custom_Kernel_draft.html` to fix the dependencies
-  * Inside `~/rpmbuild/SPEC` download kernel.spec file from `https://git.centos.org/rpms/kernel/blob/cb9fcbaee7eed97ebe55d71dd693715741dfefb2/f/SPECS/kernel.spec`
-  * `sudo dnf builddep kernel.spec` Resolve building dependencies.
-  * `cd ../SOURCE/; wget https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/kernel-4.18.0-147.el8.src.rpm`
-  * `rpm -Uvh kernel-4.18.0-147.el8.src.rpm`
-  * `rpmbuild -bp --target=$(uname -m) kernel.spec`
-  * `cd ../BUILD/kernel-XXXX/linux-xxx`
-  * `make menuconfig`
-  * `make -j4`
-  * `make -j4 modules install`
-  * `sudo make install`
+  * Modify `/etc/yum.repos.d/CentOS-Linux-AppStream.repo` `baseurl=http://vault.centos.org/$contentdir/$releasever/AppStream/$basearch/os/`
+  * `sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*`
+  * `sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*` 
+* Instruction to download custom kernel `https://wiki.centos.org/MarcusFurlong(2f)Custom_Kernel_draft.html` to fix the dependencies
+* Inside `~/rpmbuild/SPEC` download kernel.spec file from `https://git.centos.org/rpms/kernel/blob/cb9fcbaee7eed97ebe55d71dd693715741dfefb2/f/SPECS/kernel.spec`
+* `sudo dnf builddep kernel.spec` Resolve building dependencies.
+* `cd ../SOURCE/; wget https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackageSource/kernel-4.18.0-147.el8.src.rpm`
+* `rpm -Uvh kernel-4.18.0-147.el8.src.rpm`
+* `rpmbuild -bp --target=$(uname -m) kernel.spec`
+* `cd ../BUILD/kernel-XXXX/linux-xxx`
+* `make menuconfig`
+* `make -j4`
+* `make -j4 modules install`
+* `sudo make install`
 
 
 # Antelope: 
